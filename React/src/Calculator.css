@@ -1,0 +1,367 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+/* Attractive Math Theme Background */
+
+body{
+
+  background:
+  linear-gradient(
+    rgba(2,6,23,0.92),
+    rgba(15,23,42,0.95)
+  ),
+
+  url("https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1600&auto=format&fit=crop");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  overflow-x:hidden;
+}
+
+/* Main Container */
+
+.calculator-container{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:20px;
+
+  position:relative;
+}
+
+/* Floating Math Symbols */
+
+.math-bg span{
+
+  position:absolute;
+
+  color:rgba(255,255,255,0.08);
+
+  font-size:80px;
+
+  font-weight:bold;
+
+  animation:float 8s infinite ease-in-out;
+}
+
+.math-bg span:nth-child(1){
+  top:10%;
+  left:10%;
+}
+
+.math-bg span:nth-child(2){
+  top:20%;
+  right:10%;
+}
+
+.math-bg span:nth-child(3){
+  bottom:15%;
+  left:12%;
+}
+
+.math-bg span:nth-child(4){
+  bottom:10%;
+  right:15%;
+}
+
+.math-bg span:nth-child(5){
+  top:50%;
+  left:5%;
+}
+
+.math-bg span:nth-child(6){
+  top:65%;
+  right:8%;
+}
+
+.math-bg span:nth-child(7){
+  top:35%;
+  left:22%;
+}
+
+.math-bg span:nth-child(8){
+  bottom:25%;
+  right:20%;
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-20px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* Calculator */
+
+.calculator{
+
+  width:430px;
+
+  background:rgba(17,24,39,0.95);
+
+  backdrop-filter:blur(12px);
+
+  border-radius:25px;
+
+  padding:20px;
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,0.6);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  position:relative;
+
+  z-index:10;
+}
+
+/* Display */
+
+.display{
+
+  background:#dfe7d8;
+
+  border-radius:14px;
+
+  padding:18px;
+
+  margin-bottom:18px;
+
+  min-height:120px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:flex-end;
+
+  align-items:flex-end;
+}
+
+.input-box{
+
+  color:#444;
+
+  font-size:24px;
+}
+
+.result-box{
+
+  color:#111;
+
+  font-size:48px;
+
+  font-weight:bold;
+}
+
+/* Small Buttons */
+
+.small-buttons{
+
+  display:grid;
+
+  grid-template-columns:repeat(5,1fr);
+
+  gap:8px;
+
+  margin-bottom:15px;
+}
+
+.mini-btn{
+
+  height:38px;
+
+  border:none;
+
+  border-radius:8px;
+
+  background:#1e293b;
+
+  color:#facc15;
+
+  font-size:14px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.2s;
+}
+
+.mini-btn:hover{
+
+  filter:brightness(1.1);
+}
+
+.mini-btn:active{
+
+  transform:scale(0.92);
+
+  background:#000;
+}
+
+/* Main Buttons */
+
+.buttons{
+
+  display:grid;
+
+  grid-template-columns:repeat(5,1fr);
+
+  gap:10px;
+}
+
+/* Buttons */
+
+button{
+
+  height:58px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#374151;
+
+  color:white;
+
+  font-size:24px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.2s ease;
+}
+
+/* Hover */
+
+button:hover{
+
+  filter:brightness(1.08);
+}
+
+/* Touch Effect */
+
+button:active{
+
+  transform:scale(0.92);
+
+  background:#020617;
+}
+
+/* Gray Buttons */
+
+.gray-btn{
+
+  background:#6b7280;
+}
+
+/* Red Buttons */
+
+.red-btn{
+
+  background:#ef4444;
+}
+
+.red-btn:active{
+
+  background:#7f1d1d;
+}
+
+/* Operator Buttons */
+
+.operator-btn{
+
+  background:#60a5fa;
+
+  color:#111827;
+}
+
+.operator-btn:active{
+
+  background:#1d4ed8;
+
+  color:white;
+}
+
+/* Equal Button */
+
+.equal-btn{
+
+  background:#22c55e;
+}
+
+.equal-btn:active{
+
+  background:#166534;
+}
+
+/* Zero Button */
+
+.zero-btn{
+
+  grid-column:span 2;
+}
+
+/* Footer */
+
+footer{
+
+  margin-top:20px;
+
+  text-align:center;
+
+  color:#e2e8f0;
+
+  font-size:14px;
+}
+
+footer strong{
+
+  color:#38bdf8;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:500px){
+
+  .calculator{
+    width:100%;
+  }
+
+  button{
+    height:52px;
+    font-size:20px;
+  }
+
+  .mini-btn{
+    font-size:12px;
+  }
+
+  .math-bg span{
+    font-size:45px;
+  }
+}
